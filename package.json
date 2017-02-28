@@ -1,6 +1,6 @@
 {
   "name": "angular2-business-card",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Cool customizable, flippable business card to display your team members on your website",
   "main": "index.js",
   "scripts": {
