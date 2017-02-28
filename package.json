@@ -1,0 +1,16 @@
+{
+  "name": "angular2-business-card",
+  "version": "0.0.0",
+  "description": "Cool customizable, flippable business card to display your team members on your website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Niederberger <bersling@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/core": "2.x.x",
+    "rxjs": "5.x.x",
+    "zone.js": "0.x.x"
+  }
+}
