@@ -1,6 +1,6 @@
 {
   "name": "angular2-business-card",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cool customizable, flippable business card to display your team members on your website",
   "scripts": {
     "build": "ngc -p tsconfig.json",
