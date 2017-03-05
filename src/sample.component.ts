@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {BusinessCardOptions} from "./business-card-options.model";
-import {DomSanitizer} from '@angular/platform-browser';
+import {DomSanitizer, SafeStyle} from '@angular/platform-browser';
 
 @Component({
   selector: 'business-card',
