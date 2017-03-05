@@ -1,6 +1,6 @@
 {
   "name": "angular2-business-card",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cool customizable, flippable business card to display your team members on your website",
   "scripts": {
     "build": "ngc -p tsconfig.json",
@@ -14,7 +14,8 @@
     "email": "bersling@gmail.com"
   },
   "keywords": [
-    "angular", "business card"
+    "angular",
+    "business card"
   ],
   "license": "MIT",
   "repository": {
@@ -25,8 +26,7 @@
     "url": "https://github.com/bersling/angular2-business-card"
   },
   "main": "./dist/index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/common": "^2.0.0",
     "@angular/compiler": "^2.4.5",
