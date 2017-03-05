@@ -68,7 +68,7 @@ import {DomSanitizer, SafeStyle} from '@angular/platform-browser';
 </div>
 `
 })
-export class SampleComponent {
+export class BusinessCardComponent {
 
   constructor(private sanitizer: DomSanitizer) {
   }
