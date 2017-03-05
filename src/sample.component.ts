@@ -10,7 +10,6 @@ import {BusinessCardOptions} from "./business-card-options.model";
     <img [src]="options.avatar"
          alt="Avatar">
   </div>
-  {{options}}
   <div class="business-card-info">
     <div class="business-card-name">
       {{name}}
