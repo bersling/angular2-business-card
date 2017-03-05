@@ -1,7 +1,7 @@
 export interface BusinessCardOptions {
   //content options
-  avatar?: string;
+  name: string;
+  avatar: string;
 
   //layout options
-
 }
