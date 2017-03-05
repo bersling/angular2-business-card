@@ -46,7 +46,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 `],
   template: `
 <div class="business-card-wrapper" [style.background]="backgroundColor">
-  <div class="business-card-header" [style.background]="headerColor">
+  <div class="business-card-header" [style]="headerColor">
   </div>
   <div class="business-card-avatar-wrapper">
     <img [src]="options.avatar"
@@ -77,32 +77,15 @@ export class SampleComponent {
     return this.options.backgroundColor || '#F4F6F6';
   };
 
-  private prefix = (function () {
-    var styles = window.getComputedStyle(document.documentElement, ''),
-        pre = (Array.prototype.slice
-                .call(styles)
-                .join('')
-                .match(/-(moz|webkit|ms)-/) || ((<any>styles).OLink === '' && ['', 'o'])
-        )[1],
-        dom = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
-    return {
-      dom: dom,
-      lowercase: pre,
-      css: '-' + pre + '-',
-      js: pre[0].toUpperCase() + pre.substr(1)
-    };
-  })();
-  private defaultHeaderColor = '#0069FF';
-
-  public get headerColor () {
-    return this.options.headerColorTwo && this.options.headerColor ?
-        this.sanitizer.bypassSecurityTrustStyle(
-            `${this.prefix.css}linear-gradient(left top, ${this.options.headerColor}, ${this.options.headerColorTwo})`
-        )
-        //`linear-gradient(left top, ${this.options.headerColor}, ${this.options.headerColorTwo})`
-        : this.options.headerColor || this.defaultHeaderColor;
-  };
-
+  get headerColor() {
+    let defaultHeaderColor = '#0069FF';
+    let basicStyle = `linear-gradient(left top, ${this.options.headerColor}, ${this.options.headerColorTwo})`;
+    return this.options.headerColorTwo && this.options.headerColor ? this.sanitizer.bypassSecurityTrustStyle(`
+      background: -o-${basicStyle};
+      background: -moz-${basicStyle};
+      background: -webkit-${basicStyle};
+    `) : `background: ${this.options.headerColor || defaultHeaderColor}`;
+  }
 
   @Input()
   options: BusinessCardOptions;
